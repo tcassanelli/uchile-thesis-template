@@ -67,7 +67,7 @@ If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} 
   This could highly improve the quality of your science. You can also use this for Kelvins: \verb|\qty{2e4}{\kelvin}| which prints: \qty{2e4}{\kelvin}. Similarly the package offers number notations, \verb|\num{e4}| which is \num{e4} and other convenient shortcuts to list numbers and ranges for quantities and numbers. 
 
 
-
+  \item As a general rule within your manuscript and setup. Please do not use spaces when naming files. Spaces will introduce bugs in your workflow, they won't sync nicely with \texttt{git} and will make the order of things messy. This is a rule of life than anything else!
   
   % \item The list of figures (LoF) and list of tables (LoT) is printed with the extended version of the caption. This should not be the case. There should be a one sentence caption (only visible in LoF and LoT), and the extended version, only visible in the main text. To accomplish so use the \verb|\usepackage{caption}| package and in the captions use something like this: \verb|\caption[short caption]{long caption}|.
   
@@ -75,14 +75,109 @@ If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} 
 \end{enumerate}
 
 
-\subsection{Figures}
+\section{Figures}
 
 Including figures in your thesis is one of the most important tasks. Figures are first class citizens, they should be clearly made, with a good resolution, and capable of summarizing all the information. Figures (similarly as tables) must always be called within the text with a cross-reference, and if they are not then there's no actual need for the figure.
 
 When including images, pictures or screenshots it is advised to use as much as possible of your \verb|\textwidth| in order to fill in the entire width of the page. One common mistake that I've seen over and over the years is when people ``force'' \LaTeX\ to insert a figure in a certain place. \LaTeX\ is not a word processor and it is optimized to arrange text and figures within the compiled text. As a genera rule, write first the content and include figures, and at the last stages of the development is when you should ``fix'' figures in a certain place but not earlier. Most of the time this procedure is not even needed!
+In general, you'd want to include a figure with this structure:
+\begin{verbatim}
+  \begin{figure}[t]
+    \includegraphics{uchile}
+    \caption{This is the Universidad de Chile logo.}
+    \label{fig:uchile}
+  \end{figure}
+\end{verbatim}
+Then we simply call the figure in the text as \verb|\ref{fig:uchile}| (or better using \texttt{cleveref}). Notice that I used \texttt{[t]} which will place the figure at the top of the page, again considered as a good practice.
 
-
-
-Figure captions should be self-explanatory (and always present). They should contain all information to express the figure completely, with no need to go to the main text to understand the idea of it. Therefore, you must explain all variables and details. It's generally understood as a good practice to be repetitive in this case, after all most people will go quickly over the figures rather reading the entire manuscript! The sad reality.
+Figure captions should be self-explanatory (and always present). They should contain all information to express the figure completely, with no need to go to the main text to understand the idea of it. Therefore, you must explain all variables and details (there is no problem with long captions). It's generally understood as a good practice to be repetitive in this case, after all most people will go quickly over the figures rather reading the entire manuscript! The sad reality.
 
 Within the list of figures (lof) and list of tables (lot), captions will be printed completed as default in this section of the manuscript. To avoid such behavior we use the \texttt{caption} package that lets us use the short caption version: \verb|\caption[short caption]{long caption}|.
+
+\subsection{Python figures}
+
+To make figures using Python it is recommended to use the style file \texttt{thesis\_sty.mplstyle}, so your figures will have the same text size and shape as this document (see the \texttt{dummy.py} example within the \texttt{plot\_python} directory).
+To check the maximum length (or width) that your figures may have use the following \LaTeX~package \texttt{printlength}| for example the current width is: \verb|\uselengthunit{in}\printlength{\textwidth}| (which returns for this document \uselengthunit{in}\printlength{\textwidth}). There is an example of a Python script and its figure in \cref{fig:dummy}.
+
+When including this type of python figures aspects and other information should not be modified within the \verb|\includegraphics[width=..., height=...]{...}| command, since all that information should have been passed first hand to the python script itself. That way we avoid re-scaling figures, and font matching problems.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics{dummy.pdf}
+  \caption[My first Python figure]{This is a figure made with the script in \texttt{plot\_python/dummy.py}, the figure has the same font format as this caption and text in the document. Notice that $x$-axis and $y$-axis have been written in math mode within the figure labels.}
+  \label{fig:dummy}
+\end{figure}
+
+To have a well organized code and manuscript I strongly suggest to generate a single figure within a single Python script. Further, call the label similarly as the figure that you have created, so you can then \verb|\ref{fig:dummy}| and know exactly which script created it. Figures, similarly as your thesis will be re-visited multiple times, and people may ask you to modify things on them, so please keep them organized and easy to improve and fix.
+
+\subsection{Ti\textit{k}Z figures}
+
+Ti\textit{k}Z  (PGF plots) is a powerful tool to create in-line-figures in \LaTeX. Unfortunately the learning curve is \textit{very steep}, but it is definitely worth learning it! There are several online examples that you can browse and edit. Making your own figures will always have an extra value in your work and it is highly appreciated. Sources to learn how to make figures are:
+\begin{itemize}
+    \item The Ti\textit{k}Z package manual, it is long and sometimes hard to grasp but if you want to master Ti\textit{k}Z is the right place to start! \url{https://tikz.dev}
+    \item \url{https://www.ctan.org/pkg/pgf}
+    \item Several cool examples: \url{http://www.texample.net/}.
+\end{itemize}
+With some command lines you can make something like in \cref{fig:my_tikz_fig}. Go checkout the code within the \texttt{chapter1/chapter1.tex} directory.
+
+\begin{figure}[t]
+  \centering
+  \begin{tikzpicture}
+
+    \def\linethick{0.8pt}
+
+    \coordinate (M1) at (-2, 0);
+    \coordinate (m) at (2, 4);
+    \coordinate (M2) at (4, 0);
+
+    \draw[-latex] (-3, 0) -- (5, 0) node[left, below] {$x$};
+    \draw[-latex] (0, -1) -- (0, 5) node[right] {$y$};
+
+    \draw[line width=\linethick] (0, 0) -- node[midway,left] {$r$} (m) node[above] {$m$};
+    \draw[line width=\linethick] (M1) node[above, xshift=-10] {$M_1$} -- node[midway,left] {$s_1$} (m);
+    \draw[line width=\linethick] (M2) node[above, xshift=7] {$M_2$} -- node[midway,left] {$s_2$} (m);
+
+    \path (M1) -- node[midway, below] {$r_1$} (0, 0);
+    \path (0, 0) -- node[midway, below] {$r_2$} (M2);
+
+    % Dashed lines
+    \draw[dashed] (M1) -- ++ (0, -1);
+    \draw[dashed] (M2) -- ++ (0, -1);
+
+    \draw[|<->|] ($(M1) + (0, -1.1)$) -- node[midway,fill=white] {$a$} ($(M2) + (0, -1.1)$);
+
+    \node[below] at (0.4, 0) {CM};
+
+    \draw ([shift={(0, 0)}]64:0.5) arc[radius=0.5, start angle=64, end angle=0] node[above, xshift=4] {$\theta$};
+
+    % black circles
+    \filldraw[black] (m) circle(0.1);
+    \filldraw[black] (M1) circle(0.17);
+    \filldraw[black] (M2) circle(0.13);
+    \filldraw[black] (0, 0) circle(0.05);
+
+  \end{tikzpicture}
+  \caption[My first Ti\textit{k}Z figure]{Nice diagram using Ti\textit{k}Z. Notice that the typesetting of variables is the same as the one used in \LaTeX. Variables $\theta$, $M_1$, $M_2$, have the same font and text style. In this caption you should explain all variables shown in the figure.}
+  \label{fig:my_tikz_fig}
+\end{figure}
+
+
+\section{Tables}
+
+To make nice tables I suggest the package \texttt{booktabs}, as shown in \cref{tab:my_table}. This lets you add bar lines and make the tables more compact. Since it is a matter of taste feel free to look for your preferred one.
+
+\begin{table}[t]
+  \centering
+  \caption[My first table]{This is a simple table generated with \texttt{booktabs}. Captions for tables should always go at the top. Similarly as figures we should be using the configuration \texttt{[t]} and let \LaTeX\ automatically sort their position in the text.}
+  \label{tab:my_table}
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{A} & \textbf{B} & \textbf{C} \\ \midrule
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
