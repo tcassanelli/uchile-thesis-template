@@ -14,6 +14,8 @@
   bottom=2cm
 }
 
+\usepackage[dvipsnames]{xcolor}
+\definecolor{click_color}{RGB}{46,48,118}
 
 \usepackage{amsmath,amssymb,mathrsfs,commath}
 \usepackage{graphicx}
@@ -33,6 +35,71 @@
 \usepackage{printlen}
 
 \usepackage{siunitx}
+\DeclareSIUnit{\parsec}{pc}
+\DeclareSIUnit{\arcsec}{asec}
+\DeclareSIUnit{\erg}{erg}
+\DeclareSIUnit{\arcmin}{arcmin}
+\DeclareSIUnit{\arcsec}{arcsec}
+\DeclareSIUnit{\mas}{mas}
+\sisetup{
+    range-phrase=\text{--},
+    range-units=single
+    }
+
+
+% References
+\usepackage{../references/aas_macros}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{}{,} % to follow the A&A style
+
+\usepackage{tcolorbox}
+\newtcolorbox{note}{
+  fontupper=\small,
+  title=Note,
+  arc=0mm,
+  sharp corners,
+  fonttitle=\bfseries\small
+  }
+
+
+\usepackage{hyperref}
+\hypersetup{
+    % bookmarks=false,
+    unicode=true,
+    pdftoolbar=false, 
+    pdfmenubar=true,
+    pdffitwindow=true,
+    pdfstartview={FitH},
+    pdftitle={Thesis},
+    pdfauthor={Tomas Cassanelli},
+    pdfsubject={Thesis subject},
+    pdfcreator={Tomas Cassanelli},
+    pdfproducer={Tomas Cassanelli},
+    pdfkeywords={Keywords},
+    pdfnewwindow=true,
+    colorlinks=true,
+    linkcolor=click_color,
+    citecolor=Maroon,
+    urlcolor=click_color
+    }
+
+\usepackage[acronym, nonumberlist, symbols]{glossaries}
+\setglossarystyle{tree}
+\glsdisablehyper
+\makeglossaries
+\loadglsentries{main-acronyms}
+% \loadglsentries{symbols}
+\glsaddall
+
+% terminal compile glossaries
+% makeglossaries main
+
+% glossaries commands
+% \acrlong
+% \acrshort
+% \acrfull
+% \gls, \Gls, \glspl, \Glspl
+
 
 \usepackage{cleveref}
 
@@ -143,7 +210,7 @@
 	\end{tabular}
 
   \begin{center}
-    \MakeUppercase{Título de tesis en español}
+    \MakeUppercase{Title in English}
   \end{center}
   \lipsum[1-2]
 
@@ -175,6 +242,23 @@
 \subfile{../chapter1/chapter1}
 \subfile{../chapter2/chapter2}
 \subfile{../chapter3/chapter3}
+
+\appendix
+\subfile{../appendix1/appendix1}
+\subfile{../appendix2/appendix2}
+
+\phantomsection
+\printglossary[
+    type=acronym,
+    % nogroupskip=true
+    ]
+\addcontentsline{toc}{chapter}{Acronyms}
+
+
+\phantomsection
+\bibliographystyle{../references/bibstyle_aa}
+\bibliography{../references/bibfile_thesis}
+\addcontentsline{toc}{chapter}{Bibliography}
 
 
 \end{document}

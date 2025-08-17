@@ -4,6 +4,9 @@ This repository hosts the a thesis template for Universidad de Chile at the Fact
 
 FCFM official guidelines can be found [here](https://repositorio.uchile.cl/handle/2250/185276).
 
+The goal of this minimal LaTeX thesis template is to help students deepen their understanding of LaTeX, explore new packages and utilities, and develop their own writing style while following the academic and scientific writing standards. LaTeX offers a wide range of commands, automation features, and tools that can make writing your manuscript both elegant and efficient. Take advantage of CTAN and other resources to discover open-source solutions that enhance your writing experience.
+
+
 ## Setting up an enhanced writing environment
 
 Writing your thesis should be all about the writing and making figures, and less about solving dependencies problems, adjusting formats, and versioning the document. I strongly suggest you use all the following tools to set up a productive and distraction free environment to write your manuscript.
