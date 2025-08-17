@@ -1,0 +1,170 @@
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.lol
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ilg
+*.ind
+
+# Bibliography files
+*.brf
+
+# Build outputs
+*.dvi
+*.ps
+*.eps
+
+*.pdf
+
+# Latexmk
+*.figlist
+*.makefile
+*.xdv
+
+# Glossaries
+*.glsdefs
+
+# Hyperref
+*.hd
+
+# TikZ & PGF
+*.auxlock
+*.figlist
+*.makefile
+
+# Changes package
+*.soc
+
+# Comment package
+*.cut
+
+# Enumitem
+*.upa
+
+# Knitr
+*-concordance.tex
+*.tikz
+*-tikzDictionary
+
+# Listings
+*.lol
+
+# Makeidx
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# Minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+
+# Minted
+_minted*
+*.pyg
+
+# Morewrites
+*.mw
+
+# Nomencl
+*.nlg
+*.nlo
+*.nls
+
+# Pax
+*.pax
+
+# Pdfpages
+*.pdf
+
+# Sagetex
+*.sagetex.sage
+*.sagetex.py
+*.sagetex.scmd
+
+# Scrwfile
+*.wrt
+
+# Sympy
+*.xyc
+
+# Latexian
+TSWLatexianTemp*
+
+# Todonotes
+*.tdo
+
+# Xindy
+*.xdy
+
+# WinEdt
+*.bak
+*.sav
+
+# Texpad
+.texpadtmp
+
+# LyX
+*.lyx~
+
+# Kile
+*.kilepr
+
+# KBibTeX
+*~[0-9]*
+
+# TeXnicCenter
+*.tps
+
+# auto folder when using emacs and auctex
+./auto/*
+*.el
+
+# expex forward references with \gathertags
+*-tags.tex
+
+# feupdthesis
+*.cd
+*.cps
+*.figlist
+*.glstex
+*.ntn
+*.upa
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*#
