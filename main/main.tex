@@ -14,10 +14,23 @@
   bottom=2cm
 }
 
+
+\usepackage{amsmath,amssymb,mathrsfs,commath}
 \usepackage{graphicx}
-\usepackage{lipsum}
+\graphicspath{{../figures/}}
+
 \usepackage{subfiles}
 \usepackage{bookmark}
+
+% latex-specific for this template
+\usepackage{lipsum}
+\usepackage{verbatim}
+\usepackage{verbatimbox}
+\usepackage{printlen}
+
+\usepackage{siunitx}
+
+\usepackage{cleveref}
 
 \newenvironment{preliminary}%
   {\pagestyle{plain}\pagenumbering{roman}}%
@@ -50,7 +63,7 @@
 
   
   \begin{minipage}[t]{0.125\linewidth}
-    \includegraphics[width=2cm]{figures/uchile2}
+    \includegraphics[width=1.8cm]{uchile}
   \end{minipage}
 	\begin{minipage}[b]{0.8\linewidth}
 		\MakeUppercase{Universidad de Chile}
@@ -155,6 +168,9 @@
 
 \end{preliminary}
 
-\subfile{chapter1/chapter1}
+\subfile{../chapter1/chapter1}
+\subfile{../chapter2/chapter2}
+\subfile{../chapter3/chapter3}
+
 
 \end{document}

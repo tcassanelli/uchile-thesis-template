@@ -1,4 +1,88 @@
 
 \chapter{Introduction}
 
-\lipsum[1-10]
+Welcome to your thesis template! To begin with, a brief explanation on how to use the template. The main \TeX\ (pronounced as \textit{tech}) file is located in \texttt{main/main.tex} and will be the main file to compile. Individual chapters also compile independently (located in e.g., \texttt{chapter1/chapter1.tex}) which is useful when compilation times exceed the minute. This independent compilation is a good tool, since you'll be adding a ton of text it is a pain to always wait for the \texttt{main.tex} file to finish compiling.
+
+If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} and \texttt{bibtex}. If you're using VS Code or Atom, or similar text editor they will automatically call these commands under-the-hood in order to compile your manuscript.
+
+\section{Good practices while writing in \LaTeX}
+
+\TeX and \LaTeX typography are key for a good document and are the main reason why we bother in writing papers in a \LaTeX\ rather than in a rich text environment.
+
+\begin{enumerate}
+
+  \item Proper use of math-mode and text-mode. When writing equations and variables within the text you must always keep those variables in the same notation. E.g.,
+  \begin{equation}
+      E = mc^2.
+  \end{equation}
+  Then when referencing the variables in the text you must include them as they were initially defined, viz., $E$ (\verb|$E$|) and not E. In addition, it is a good practice to keep variables different from one another as much as you can, energy $E$ and electric field $E$, perhaps use a slightly different variable for them. 
+
+  \item \textit{Use of the cross-references}, which comes by default, within \TeX. This is very important to not fall in redundant/repeated information, unknown location of things, and simplicity of the text. With this I mean the use of \verb|\label{...}| and \verb|\ref{...}|. Every time you define a figure, always use it (otherwise what's the point of the figure?). In addition, there is non explicit phrases such as: ``in the fig below'', ``the previous equation'', ``the previous section'', etc. All those should be immediately corrected with a proper cross-reference otherwise may lead to confusion (besides the fact that the \TeX-compiler automatically adjust the text and figures to optimize the space). There are very useful packages that make this process even easier (than the native \TeX), you may want to check \verb|\usepackage{cleveref}|\footnote{\url{https://ctan.org/pkg/cleveref}.}, for example.
+  
+  \item Acronyms may lead to a lot of unorganized text if not used properly. In general, acronyms should be defined once, or ``once in a while'' recall them within the text (e.g., within every chapter in a long thesis). To keep track where you have defined it may lead to many edits. I suggest using \verb|\usepackage{glossaries}|\footnote{\url{https://ctan.org/pkg/glossaries}.}, it will automatically call the acronym given a predefined command, won't repeat the definition (unless you force it to do it), and also prints a full list of the used acronyms, which is super convenient. The learning curve for this may be steep, but worth it.
+  
+  \item The proper use of hyphens \verb|-| and it prints -, n-dash \verb|--| and it prints --, and m-dash \verb|---| and it prints ---. All of them are different! Further, there are some cases where hyphens (\verb|-|) are different from minus sign \verb|$-$| at it prints $-$. All of these have a different meaning in scientific writing. For more check: \url{https://sites.duke.edu/scientificwriting/dash-v-hyphen/}.
+  
+  \item Writing equations. \LaTeX\ has been built to write equations, and make them flow in the text as if they were words. This is the main philosophy when writing. In order to accomplish so, be minded of the spaces that you insert between paragraphs and equations. E.g.,
+  
+  \begin{verbnobox}[\small]
+    Ampère's law (including the Maxwell correction) relates the generation 
+    of a magnetic field curl and a time-varying electric field given a 
+    source of current,
+    \begin{equation}
+      \nabla \times \boldsymbol{\mathcal{B}} = 
+      \mu_0 \boldsymbol{\mathcal{J}} + 
+      \mu_0 \epsilon_0 \frac{\partial\boldsymbol{\mathcal{E}}}{\partial t},
+    \end{equation}
+    where $\boldsymbol{\mathcal{B}}$, $\boldsymbol{\mathcal{E}}$, 
+    and $\boldsymbol{\mathcal{J}}$ are time- and position-dependent 
+    magnetic, electric, and current density fields. 
+    The second term on the right in 
+    \cref{eq:ampere-maxwell} corresponds to the so-called 
+    ``displacement current.'' It is not a current per se, but its name 
+    has stuck for historical reasons.
+  \end{verbnobox}
+  
+  This text should compile as:
+
+  Ampère's law (including the Maxwell correction) relates the generation of a magnetic field curl and a time-varying electric field given a source of current,
+  \begin{equation}
+    \nabla \times \boldsymbol{\mathcal{B}} = \mu_0 \boldsymbol{\mathcal{J}} + \mu_0 \epsilon_0 \frac{\partial \boldsymbol{\mathcal{E}}}{\partial t}, \label{eq:ampere-maxwell}
+  \end{equation}
+  where $\boldsymbol{\mathcal{B}}$, $\boldsymbol{\mathcal{E}}$, and $\boldsymbol{\mathcal{J}}$ are time- and position-dependent magnetic, electric, and current density fields. The second term on the right in \cref{eq:ampere-maxwell} corresponds to the so-called ``displacement current.'' It is not a current per se, but its name has stuck for historical reasons.
+
+  In this example, please notice that text and the equation environment are packed together. There are no line breaks between them. If there were then \LaTeX\ will introduce a line break, removing the flow of text. Having commas and dots within the equation environment is also desired. Equations are part of the text and they should be treated as such.
+  
+  \item Displaying units. Along the text there will be many mentions of units, as it should be. Usually they should be expressed with a number and a fixed space, where people tend to do something like: \verb|$4\mathrm{m}$|, or \verb|$4$ m| and it prints $4$ m (notice that the number four is in math mode and not text mode!). An even better practice is to use a package to deal with this sort of things, e.g., \verb|\usepackage{siunitx}|. This package gives you the freedom of using ``quantities'' in text and math mode. For example: \verb|\qty{4}{\meter}| will \qty{4}{\m}. The cool thing about this is that you can write easily
+  \begin{verbatim}
+      \begin{equation}
+          x^2 + y^2 = \qty{4}{\meter\squared}
+      \end{equation}
+  \end{verbatim}
+
+  This will then be compiled as:
+  \begin{equation}
+    x^2 + y^2 = \qty{4}{\meter\squared}
+  \end{equation}
+  This could highly improve the quality of your science. You can also use this for Kelvins: \verb|\qty{2e4}{\kelvin}| which prints: \qty{2e4}{\kelvin}. Similarly the package offers number notations, \verb|\num{e4}| which is \num{e4} and other convenient shortcuts to list numbers and ranges for quantities and numbers. 
+
+
+
+  
+  % \item The list of figures (LoF) and list of tables (LoT) is printed with the extended version of the caption. This should not be the case. There should be a one sentence caption (only visible in LoF and LoT), and the extended version, only visible in the main text. To accomplish so use the \verb|\usepackage{caption}| package and in the captions use something like this: \verb|\caption[short caption]{long caption}|.
+  
+  % \item It would be best to have a header and footer in the document.
+\end{enumerate}
+
+
+\subsection{Figures}
+
+Including figures in your thesis is one of the most important tasks. Figures are first class citizens, they should be clearly made, with a good resolution, and capable of summarizing all the information. Figures (similarly as tables) must always be called within the text with a cross-reference, and if they are not then there's no actual need for the figure.
+
+When including images, pictures or screenshots it is advised to use as much as possible of your \verb|\textwidth| in order to fill in the entire width of the page. One common mistake that I've seen over and over the years is when people ``force'' \LaTeX\ to insert a figure in a certain place. \LaTeX\ is not a word processor and it is optimized to arrange text and figures within the compiled text. As a genera rule, write first the content and include figures, and at the last stages of the development is when you should ``fix'' figures in a certain place but not earlier. Most of the time this procedure is not even needed!
+
+
+
+Figure captions should be self-explanatory (and always present). They should contain all information to express the figure completely, with no need to go to the main text to understand the idea of it. Therefore, you must explain all variables and details. It's generally understood as a good practice to be repetitive in this case, after all most people will go quickly over the figures rather reading the entire manuscript! The sad reality.
+
+Within the list of figures (lof) and list of tables (lot), captions will be printed completed as default in this section of the manuscript. To avoid such behavior we use the \texttt{caption} package that lets us use the short caption version: \verb|\caption[short caption]{long caption}|.
