@@ -1,28 +1,33 @@
 # LaTeX auxiliary files
-*.aux
-*.bbl
-*.bcf
-*.blg
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.run.xml
-*.synctex.gz
-*.toc
-*.lof
-*.lot
-*.lol
-*.acn
-*.acr
-*.alg
-*.glg
-*.glo
-*.gls
-*.ist
-*.idx
-*.ilg
-*.ind
+**.aux
+**.bbl
+**.bcf
+**.blg
+**.fdb_latexmk
+**.fls
+**.log
+**.out
+**.run.xml
+**.synctex.gz
+**.toc
+**.lof
+**.lot
+**.lol
+**.acn
+**.acr
+**.alg
+**.glg
+**.glo
+**.gls
+**.ist
+**.idx
+**.ilg
+**.ind
+
+# glossaries
+**.slg
+**.slo
+**.sls
 
 # Bibliography files
 *.brf

@@ -1,0 +1,51 @@
+# Author: Tomas Cassanelli
+# Last update: 17.08.2025
+
+# Look here how to add more style!
+# https://matplotlib.org/stable/users/explain/customizing.html
+
+# LINES
+lines.linewidth     : 0.8
+
+# TEXT
+text.usetex         : True
+text.latex.preamble : \usepackage{siunitx}
+
+# FONT
+font.family         : serif
+font.serif          : Computer Modern Roman
+font.size           : 12
+
+# AXES
+axes.labelsize      : 12
+axes.linewidth      : 0.5
+axes.titlesize      : 12
+axes.grid           : False
+axes.prop_cycle     : cycler('color', ['1f2db4', 'b41f2d', '1fb4a6', 'b4a61f'])
+
+# TICKS
+xtick.labelsize     : 10
+ytick.labelsize     : 10
+
+# IMAGES
+image.cmap          : viridis
+image.origin        : lower
+
+# GRIDS
+grid.linestyle      : --
+grid.alpha          : 0.6
+grid.linewidth      : 0.3
+grid.color          : b0b0b0
+
+# FIGURE
+figure.titlesize    : 12
+figure.dpi          : 200
+
+# LEGEND
+legend.fontsize     : 10
+legend.fancybox     : False
+legend.borderpad    : 0.4
+
+# SAVING FIGURES
+savefig.bbox        : tight
+savefig.pad_inches  : 0.03
