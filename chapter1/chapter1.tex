@@ -3,25 +3,23 @@
 
 Welcome to your thesis template! To begin with, a brief explanation on how to use the template. The main \TeX\ (pronounced as \textit{tech}) file is located in \texttt{main/main.tex} and will be the main file to compile. Individual chapters also compile independently (located in e.g., \texttt{chapter1/chapter1.tex}) which is useful when compilation times exceed the minute. This independent compilation is a good tool, since you'll be adding a ton of text it is a pain to always wait for the \texttt{main.tex} file to finish compiling.
 
-If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} and \texttt{\texttt{bibtex}}. If you're using VS Code or Atom, or similar text editor they will automatically call these commands under-the-hood in order to compile your manuscript. For details on how to setup writing and coding environments check the \texttt{README.md} file in the GitHub repository.
+If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} and \texttt{bibtex}. If you're using VS Code or Atom, or similar text editor they will automatically call these commands under-the-hood in order to compile your manuscript (but first install a \TeX\ distribution). For details on how to set up writing and coding environments check the \texttt{README.md} file in the GitHub repository.
 
-\LaTeX\ is not a word processing system, meaning that all information will be first compiled to then be seen in the PDF document. Plain text is low weight, very fast, and does not need additional resources for computers now-a-days to use and store. On the contrary word processors, are \textit{laggy}, they tend to be very slow and/or all of a sudden stop working. \LaTeX\ gives you the advantage of just focusing on the content and then on the formatting, which is in fact the important thing.
+\LaTeX\ is not a word processing system, meaning that all information will be first compiled to then be seen in the PDF document. Plain text is lightweight, very fast, and does not need additional resources for computers nowadays to use and store. On the contrary, word processors are bulky and laggy, they tend to be very slow and/or all of a sudden stop working losing all your data. \LaTeX\ gives you the advantage of just focusing on the content and then on the formatting, which is in fact the important thing.
 
-Over the past decade online \LaTeX\ services have been popularized a lot. Services such as Overleaf or Sharelatex are great to collaborate, but lose the main principles of \LaTeX. Control of your environment, usage of bash and other coding utilities, customization and cross-reference for multiple files make the usage of Overleaf for large documents such as a thesis very tedious. In addition, the option to work off-line (distraction free) in a simple text editor is not comparable.
+Over the past decade online \LaTeX\ services have been popularized a lot. Services such as Overleaf are great for collaboration, but lose the main principles of \LaTeX. Control of your environment, usage of bash and other coding utilities, customization and cross-reference for multiple files make the usage of Overleaf for large documents such as a thesis very tedious. In addition, the option to work offline (distraction free) in a simple text editor is not comparable.
 %
-Other drawbacks of Overleaf include limited access to custom packages and system-level tools, slower compilation times for large projects, and potential privacy concerns since your files are stored on third-party servers. Overleaf also restricts advanced automation and scripting, making it harder to integrate with version control systems like \texttt{git} or to automate builds and testing (bash and Python scripting). Finally, dependency on internet connectivity can be problematic, and the platform may not support all features or workflows required for complex scientific documents.
+Other drawbacks of Overleaf include limited access to custom packages and system-level tools, slower compilation times for large projects (where they make you pay for longer compilation times), and potential privacy concerns since your files are stored on third-party servers. Overleaf also restricts advanced automation and scripting, making it harder to integrate with version control systems like \texttt{git} or to automate builds and testing (bash and Python scripting). Finally, dependency on internet connectivity can be problematic, and the platform may not support all features or workflows required for complex scientific documents.
 
-Open source software has played a crucial role in the development and widespread adoption of \LaTeX. The \LaTeX\ system itself is open source, allowing users to freely modify, distribute, and improve the codebase. This collaborative environment has led to a rich ecosystem of packages, templates, and tools contributed by the global community. Open source principles ensure that \LaTeX\ remains accessible, extensible, and adaptable for a wide range of scientific, academic, and technical writing needs. It is free of use and should not be restricted by a paywall to access all tis features.
+To know more on the impact of open source software in scientific publishing and the development of \LaTeX, see \citet{1984texb.book.....K,1994ldps.book.....L}. Comprehensive information about open source principles in software can be found in \citet{stLaurent2004opensource}.
 
-There are multiple \LaTeX\ tutorials out there so I do not need to convince you \LaTeX\ is great, and the intention of this template is just to show you those tools that I find the most useful to write your thesis. 
+There are multiple \LaTeX\ tutorials out there so I do not need to convince you \LaTeX\ is great, and the intention of this template is just to show you those tools that I find the most useful to write your thesis and most important in the scientific writing world.
 
-One final word about customization. Here I hand to you the full customization of your document, meaning that the possibilities are infinite. Using fixed and not flexible templates will obscure your way of learning how to code here, and may not be as useful for a potential academic career where debugging \LaTeX\ code is a must.
+One final word about customization. My intention here is to hand you the full customization of your document, to maximize your writing and add your touch to the document. Using fixed and inflexible templates will obscure your learning path and how to code here, and may not be as useful for a potential academic career where debugging \LaTeX\ code is a must.
 
-Errors and warnings are normal, but it is strongly advice to minimize them as much as you can. The idea of this code is to be as portable as possible, light weight and easy to compile. If you have problems read online, and/or ask for help!
+\section{Good practices}
 
-\section{Good practices while writing in \LaTeX}
-
-\TeX and \LaTeX typography are key for a good document and are the main reason why we bother in writing papers in a \LaTeX\ rather than in a rich text environment.
+\TeX and \LaTeX\ typography are key for a good document and are the main reason why we bother in writing papers in a \LaTeX\ rather than in a rich text environment. Take these guidelines seriously and apply them to your document here and for other projects. Spread the word!
 
 \begin{enumerate}
 
@@ -29,15 +27,15 @@ Errors and warnings are normal, but it is strongly advice to minimize them as mu
   \begin{equation}
       E = mc^2.
   \end{equation}
-  Then when referencing the variables in the text you must include them as they were initially defined, viz., $E$ (\verb|$E$|) and not E. In addition, it is a good practice to keep variables different from one another as much as you can, energy $E$ and electric field $E$, perhaps use a slightly different variable for them. 
+  Then when referencing the variables in the text you must include them as they were initially defined, viz., $E$ (\verb|$E$|) and not E. In addition, it is a good practice to keep variables different from one another as much as you can, energy $E$ and electric field $E$, which is sometimes unavoidable, but perhaps use a slightly different variable for them. 
 
-  \item \textit{Use of the cross-references}, which comes by default, within \TeX. This is very important to not fall in redundant/repeated information, unknown location of things, and simplicity of the text. With this I mean the use of \verb|\label{...}| and \verb|\ref{...}|. Every time you define a figure, always use it (otherwise what's the point of the figure?). In addition, there is non explicit phrases such as: ``in the fig below'', ``the previous equation'', ``the previous section'', etc. All those should be immediately corrected with a proper cross-reference otherwise may lead to confusion (besides the fact that the \TeX-compiler automatically adjust the text and figures to optimize the space). There are very useful packages that make this process even easier (than the native \TeX), you may want to check \verb|\usepackage{cleveref}|\footnote{\url{https://ctan.org/pkg/cleveref}.}, for example.
+  \item {Use of cross-references}, which comes by default, within \TeX. This is very important to not fall into redundant/repeated information, unknown location of things, and simplicity of the text. With this I mean the use of \verb|\label{...}| and \verb|\ref{...}|, in tables, figures, equations, and sections. Further, every time you define a figure, always use it (otherwise what's the point of the figure?). In addition, there are no explicit phrases such as: ``in the fig below'', ``the previous equation'', ``the previous section'', etc. All those should be immediately corrected with a proper cross-reference otherwise may lead to confusion. There are very useful packages that make this process even easier (than the native \TeX), you may want to check \verb|\usepackage{cleveref}|\footnote{\url{https://ctan.org/pkg/cleveref}.}, for example.
   
-  \item Acronyms may lead to a lot of unorganized text if not used properly. In general, acronyms should be defined once, or ``once in a while'' recall them within the text (e.g., within every chapter in a long thesis). To keep track where you have defined it may lead to many edits. I suggest using \verb|\usepackage{glossaries}|\footnote{\url{https://ctan.org/pkg/glossaries}.}, it will automatically call the acronym given a predefined command, won't repeat the definition (unless you force it to do it), and also prints a full list of the used acronyms, which is super convenient. The learning curve for this may be steep, but worth it.
+  \item Acronyms may lead to a lot of unorganized text if not used properly. In general, acronyms should be defined once, or ``once in a while'' recall them within the text (e.g., within every chapter in a long thesis). To keep track where you have defined it may lead to many edits. I suggest using \verb|\usepackage{glossaries}|\footnote{\url{https://ctan.org/pkg/glossaries}.}, it will automatically call the acronym given a predefined command, won't repeat the definition (unless you force it to do it), and also prints a full list of the used acronyms, which is super convenient. The learning curve for this may be steep, but worth it. See \cref{sec:glossaries} for additional information.
   
-  \item The proper use of hyphens \verb|-| and it prints -, n-dash \verb|--| and it prints --, and m-dash \verb|---| and it prints ---. All of them are different! Further, there are some cases where hyphens (\verb|-|) are different from minus sign \verb|$-$| at it prints $-$. All of these have a different meaning in scientific writing. For more check: \url{https://sites.duke.edu/scientificwriting/dash-v-hyphen/}.
+  \item The proper use of hyphens \verb|-| and it prints -, en-dash \verb|--| and it prints --, and em-dash \verb|---| and it prints ---. All of them are different! Further, there are some cases where hyphens (\verb|-|) are different from minus sign \verb|$-$| and it prints $-$. All of these have a different meaning in scientific writing. For more check: \url{https://sites.duke.edu/scientificwriting/dash-v-hyphen/}.
   
-  \item Writing equations. \LaTeX\ has been built to write equations, and make them flow in the text as if they were words. This is the main philosophy when writing. In order to accomplish so, be minded of the spaces that you insert between paragraphs and equations. E.g.,
+  \item Writing equations. \LaTeX\ has been built to write equations, and make them flow in the text as if they were words. This is the main philosophy when writing. In order to accomplish this, be mindful of the spaces that you insert between paragraphs and equations. E.g.,
   
   \begin{verbnobox}[\small]
     Ampère's law (including the Maxwell correction) relates the generation 
@@ -78,12 +76,15 @@ Errors and warnings are normal, but it is strongly advice to minimize them as mu
   \begin{equation}
     x^2 + y^2 = \qty{4}{\meter\squared}
   \end{equation}
-  This could highly improve the quality of your science. You can also use this for Kelvins: \verb|\qty{2e4}{\kelvin}| which prints: \qty{2e4}{\kelvin}. Similarly the package offers number notations, \verb|\num{e4}| which is \num{e4} and other convenient shortcuts to list numbers and ranges for quantities and numbers. 
+  This will highly improve the quality of your science. You can also use this for Kelvins: \verb|\qty{2e4}{\kelvin}| which prints: \qty{2e4}{\kelvin}. Similarly, the package offers number notations, \verb|\num{e4}| which is \num{e4} and other convenient shortcuts to list numbers and ranges for quantities and numbers.
 
+  \item Use a version control system, such as \texttt{git}. Although having it on GitHub is not super necessary it helps to backup the code. Using \texttt{git} enables collaboration (i.e., your supervisor wants to include or give you comments), you can then \texttt{git diff} or even better \texttt{latexdiff} between different commits (or simply \texttt{git-latexdiff}). 
 
-  \item As a general rule within your manuscript and setup. Please do not use spaces when naming files. Spaces will introduce bugs in your workflow, they won't sync nicely with \texttt{git} and will make the order of things messy. This is a rule of life than anything else!
+  \item As a general rule within your manuscript and setup, do not use spaces when naming files. Spaces will introduce bugs in your workflow, they won't sync nicely with \texttt{git} and will make the organization of things messy. This is a rule of life more than anything else!
   
-  \item Spaces in \LaTeX. In general you do not need to add any sort of space between paragraphs, figures, or tables. Everything should be simply solved by including a simply plan text line break. Using commands such as \verb|\\| may be even considered harmful since it will mess up the \LaTeX\ compiler optimization. 
+  \item Line breaks in \LaTeX's plain text. In general you do not need to add any sort of space command between paragraphs, figures, or tables. Everything should be simply solved by including a simple plain text line break. Using commands such as \verb|\\| may be even considered harmful since it will mess up the \LaTeX\ compiler optimization. 
+  
+  \item Errors and warnings are common during \LaTeX\ compilation, but it is strongly advised to minimize them as much as possible. Warnings may indicate issues with references, formatting, or package compatibility (the hardest to solve sometimes), while errors can prevent the document from compiling at all. Maintaining an error- and warning-free document ensures smoother workflow, easier debugging, and higher quality output.
   
   % \item The list of figures (LoF) and list of tables (LoT) is printed with the extended version of the caption. This should not be the case. There should be a one sentence caption (only visible in LoF and LoT), and the extended version, only visible in the main text. To accomplish so use the \verb|\usepackage{caption}| package and in the captions use something like this: \verb|\caption[short caption]{long caption}|.
   
@@ -92,10 +93,11 @@ Errors and warnings are normal, but it is strongly advice to minimize them as mu
 
 
 \section{Figures}
+\label{sec:figures}
 
 Including figures in your thesis is one of the most important tasks. Figures are first class citizens, they should be clearly made, with a good resolution, and capable of summarizing all the information. Figures (similarly as tables) must always be called within the text with a cross-reference, and if they are not then there's no actual need for the figure.
 
-When including images, pictures or screenshots it is advised to use as much as possible of your \verb|\textwidth| in order to fill in the entire width of the page. One common mistake that I've seen over and over the years is when people ``force'' \LaTeX\ to insert a figure in a certain place. \LaTeX\ is not a word processor and it is optimized to arrange text and figures within the compiled text. As a genera rule, write first the content and include figures, and at the last stages of the development is when you should ``fix'' figures in a certain place but not earlier. Most of the time this procedure is not even needed!
+When including images, pictures or screenshots it is advised to use as much as possible of your \verb|\textwidth| in order to fill in the entire width of the page. One common mistake that I've seen over and over the years is when people ``force'' \LaTeX\ to insert a figure in a certain place. \LaTeX\ is not a word processor and it is optimized to arrange text and figures within the compiled text. As a general rule, write first the content and include figures, and at the last stages of the development is when you should ``fix'' figures in a certain place but not earlier. Most of the time this procedure is not even needed!
 In general, you'd want to include a figure with this structure:
 \begin{verbatim}
   \begin{figure}[t]
@@ -106,16 +108,19 @@ In general, you'd want to include a figure with this structure:
 \end{verbatim}
 Then we simply call the figure in the text as \verb|\ref{fig:uchile}| (or better using \texttt{cleveref}). Notice that I used \texttt{[t]} which will place the figure at the top of the page, again considered as a good practice.
 
-Figure captions should be self-explanatory (and always present). They should contain all information to express the figure completely, with no need to go to the main text to understand the idea of it. Therefore, you must explain all variables and details (there is no problem with long captions). It's generally understood as a good practice to be repetitive in this case, after all most people will go quickly over the figures rather reading the entire manuscript! The sad reality.
+Figure captions should be self-explanatory (and always present). They should contain all information to express the figure completely, with no need to go to the main text to understand the idea of it. Therefore, you must explain all variables and details (there is no problem with long captions). It's generally understood as a good practice to be repetitive in this case, after all most people will go quickly over the figures rather than reading the entire manuscript! The sad reality.
 
-Within the list of figures (lof) and list of tables (lot), captions will be printed completed as default in this section of the manuscript. To avoid such behavior we use the \texttt{caption} package that lets us use the short caption version: \verb|\caption[short caption]{long caption}|.
+Within the \gls{lof} and \gls{lot}, captions will be printed completely as default in this section of the manuscript. To avoid such behavior we use the \texttt{caption} package that lets us use the short caption version: \verb|\caption[short caption]{long caption}|.
+
+Personally, packages such as \verb|\usepackage{subfigure}| aren't a good solution. They occupy more space in the compiled figure environment, and return a bulky solution. It is best to build your own figure with multiple figures to then be cited in the text. This could be accomplished with either \cref{sec:python,sec:tikz}.
 
 \subsection{Python figures}
+\label{sec:python}
 
 To make figures using Python it is recommended to use the style file \texttt{thesis\_sty.mplstyle}, so your figures will have the same text size and shape as this document (see the \texttt{dummy.py} example within the \texttt{plot\_python} directory).
-To check the maximum length (or width) that your figures may have use the following \LaTeX~package \texttt{printlength}| for example the current width is: \verb|\uselengthunit{in}\printlength{\textwidth}| (which returns for this document \uselengthunit{in}\printlength{\textwidth}). There is an example of a Python script and its figure in \cref{fig:dummy}.
+To check the maximum length (or width) that your figures may have use the following \LaTeX~package \verb|\usepackage{printlength}| for example the current width is: \verb|\uselengthunit{in}\printlength{\textwidth}| (which returns for this document \uselengthunit{in}\printlength{\textwidth}). There is an example of a Python script and its figure in \cref{fig:dummy}.
 
-When including this type of python figures aspects and other information should not be modified within the \verb|\includegraphics[width=..., height=...]{...}| command, since all that information should have been passed first hand to the python script itself. That way we avoid re-scaling figures, and font matching problems.
+When including this type of python figures, aspects and other information should not be modified within the \verb|\includegraphics[width=..., height=...]{...}| command, since all that information should have been passed first-hand to the python script itself. That way we avoid re-scaling figures, and font matching problems.
 
 \begin{figure}[t]
   \centering
@@ -124,9 +129,10 @@ When including this type of python figures aspects and other information should 
   \label{fig:dummy}
 \end{figure}
 
-To have a well organized code and manuscript I strongly suggest to generate a single figure within a single Python script. Further, call the label similarly as the figure that you have created, so you can then \verb|\ref{fig:dummy}| and know exactly which script created it. Figures, similarly as your thesis will be re-visited multiple times, and people may ask you to modify things on them, so please keep them organized and easy to improve and fix.
+To have a well-organized codebase and manuscript I strongly suggest generating a single figure within a single Python script. Further, call the label similarly to the figure that you have created, so you can then \verb|\ref{fig:dummy}| and know exactly which script created it. Figures, similarly to your thesis will be re-visited multiple times, and people may ask you to modify things on them, so please keep them organized and easy to improve and fix.
 
 \subsection{Ti\textit{k}Z figures}
+\label{sec:tikz}
 
 Ti\textit{k}Z  (PGF plots) is a powerful tool to create in-line-figures in \LaTeX. Unfortunately the learning curve is \textit{very steep}, but it is definitely worth learning it! There are several online examples that you can browse and edit. Making your own figures will always have an extra value in your work and it is highly appreciated. Sources to learn how to make figures are:
 \begin{itemize}
@@ -134,7 +140,7 @@ Ti\textit{k}Z  (PGF plots) is a powerful tool to create in-line-figures in \LaTe
     \item \url{https://www.ctan.org/pkg/pgf}
     \item Several cool examples: \url{http://www.texample.net/}.
 \end{itemize}
-With some command lines you can make something like in \cref{fig:my_tikz_fig}. Go checkout the code within the \texttt{chapter1/chapter1.tex} directory.
+With some command lines you can make something like in \cref{fig:my_tikz_fig}. Go check out the code within the \texttt{chapter1/chapter1.tex} directory.
 
 \begin{figure}[t]
   \centering
@@ -179,8 +185,9 @@ With some command lines you can make something like in \cref{fig:my_tikz_fig}. G
 
 
 \section{Tables}
+\label{sec:tables}
 
-To make nice tables I suggest the package \texttt{booktabs}, as shown in \cref{tab:my_table}. This lets you add bar lines and make the tables more compact. Since it is a matter of taste feel free to look for your preferred one.
+To make nice tables I suggest the package \verb|\usepackage{booktabs}|, as shown in \cref{tab:my_table}. This lets you add bar lines and make the tables more compact. Since it is a matter of taste feel free to look for your preferred one.
 
 \begin{table}[t]
   \centering
@@ -199,10 +206,11 @@ To make nice tables I suggest the package \texttt{booktabs}, as shown in \cref{t
 \end{table}
 
 \section{Citation and references}
+\label{sec:citations}
 
-Citations in natural sciences are done in the package \texttt{natbib}. These citation style is the normal in journals such as the Astronomy \& Astrophysics (\url{https://www.aanda.org/component/content?view=article&id=160}), and the Astrophysical Journal. We will not be using the IEEE standard here, but it can be easily implemented. In general, I'd rather using the natural science way since it let us flow the text easily, check the author right away within the text and not to go back and forth over the citations.
+Citations in natural sciences are done with the package \verb|\usepackage{natbib}|. This citation style is normal in journals such as Astronomy \& Astrophysics (\url{https://www.aanda.org/component/content?view=article&id=160}), and the Astrophysical Journal. We will not be using the IEEE standard here, but it can be easily implemented. In general, I'd rather use the natural science way since it lets us flow the text easily, check the author right away within the text and not go back and forth over the citations.
 
-YOu should add the \texttt{bibtex} cites in the \texttt{bibfile\_thesis.bib}, then call them within your \LaTeX\ file. Finally, after you add a reference you have to compile the \texttt{pdflatex} once, then compile \texttt{bibtex} and compile pdflatex twice, if not you won't see any changes in your pdf file.
+You should add the \texttt{bibtex} cites in the \texttt{bibfile\_thesis.bib}, then call them within your \LaTeX\ file. Finally, after you add a reference you have to compile the \texttt{pdflatex} once, then compile \texttt{bibtex} and compile \texttt{pdflatex} twice, if not you won't see any changes in your pdf file.
 
 Some in-line example citations:
 \begin{itemize}
@@ -212,29 +220,33 @@ Some in-line example citations:
   \item A new method, developed from first principles, has been developed in very-long baseline interferometry (some authors include \citealt{1965ftia.book.....B}).
 \end{itemize}
 
-Please mind double nested parenthesis (in equations figures or citations). To avoid this on citations use the command \verb|\citealt{...}| which will remove the parenthesis. Besides the classical commands \verb|\citep{...}| and \verb|\citet{...}| you can mention the author or year of publication using the commands: \verb|\citeauthor{...}| and \verb|\citeyear{...}|.
+Please mind double nested parentheses (in equations figures or citations). To avoid this in citations use the command \verb|\citealt{...}| which will remove the parentheses. Besides the classical commands \verb|\citep{...}| and \verb|\citet{...}| you can mention the author or year of publication using the commands: \verb|\citeauthor{...}| and \verb|\citeyear{...}|.
 
-Once you have added the citation in the \texttt{bibfile\_thesis.bib} this will not appear in the reference section, unless it is called with the \texttt{citep\{...\}} command. References won't show up when you compile chapters individually, they will only appear once you compile the \texttt{thesis\_msc.tex} file.
+Once you have added the citation in the \texttt{bibfile\_thesis.bib} this will not appear in the reference section, unless it is called with the \verb|\citep{...}| command. References won't show up when you compile chapters individually, they will only appear once you compile the \texttt{thesis\_msc.tex} file.
 
-To find articles and references it is strongly adviced that you use Astrophysics Data System (ADS): \url{https://ui.adsabs.harvard.edu} here you can find all available references worldwide and easily extract the \texttt{bibtex} string.
+To find articles and references it is strongly advised that you use Astrophysics Data System (ADS): \url{https://ui.adsabs.harvard.edu} here you can find all available references worldwide and easily extract the \texttt{bibtex} string.
 
 \section{Glossaries and acronyms}
+\label{sec:glossaries}
 
-The \verb|\usepackage{glossaries}| is vast and large package containing everything to develop and large index, acronyms and other very nice features that may be overkill for an undergraduate thesis document. Nevertheless, it has a simple smaller version to include acronyms. In the \LaTeX\ world there are several other ways to include acronyms, but I think this is one of the best ones. 
+A full glossary is completely unnecessary for an undergraduate thesis and a graduate one as well, unless in very well-justified cases. Nonetheless, a list of acronyms or variables with units could be of great use particularly when names and variables are scattered all over the place. In particular, acronyms should be defined one time in the text and re-defined again in some key places, but not to fall into defining them over and over. In addition, if an acronym is defined it is recommended to be used then unless it is the case of a very widely known acronym, e.g., \gls{ieee}. As a rule of thumb, use capitalized letters only for institution names, names, or historically written acronyms, otherwise please keep them lowercase, e.g., \acrfull{frb} and \acrfull{bnc}.
+
+The \verb|\usepackage{glossaries}| is a vast and large package containing everything to develop a large index, acronyms and other very nice features that may be overkill for an undergraduate thesis document. Nevertheless, it has a simple smaller version to include acronyms. In the \LaTeX\ world there are several other ways to include acronyms, but I think this is one of the best ones. 
 
 To call a command you should define it first in the \texttt{main/main-acronyms.tex} file, and within the text you use the command \verb|\gls{...}|, for example:
 
-\Glspl{frb} are millisecond duration flashes of coherent radio emission. \glspl{frb} appear at cosmological distances and they interact with matter across the way. A single \gls{frb} is capable of outputting the Sun's entire energy in a single burst.
+\Glspl{frb} are millisecond-duration flashes of coherent radio emission. \glspl{frb} appear at cosmological distances and they interact with matter along the way. A single \gls{frb} is capable of outputting the Sun's entire energy in a single burst.
 
 Within the text and this example I used the commands \verb|\Glspl{...}| for capitalized and plural, then \verb|\glspl{...}| for plurals and finally \verb|\gls{...}| for the ordinary case (please check this in the \texttt{chapter1.tex} file).
 Lastly, once you have modified the \texttt{main/main-acronyms.tex} file and the thesis itself you have to compile the glossaries with the command: \texttt{makeglossaries main}, in the \texttt{main/} directory.
 
 % To call a glossary \gls{frb}
 
-\section{Boxes}
+\section{Boxes and highlighting}
+\label{sec:boxes}
 
-An additional feature within \LaTeX\ is the capability of defining your own tables or boxes environments. These could very very specific or simple a note. This is, yet another, very large package, \verb|\usepackage{tcolorbox}|. Luckily there's plenty of code out of already built styles and it is as easy as to copy and paste to implement a new table environment.
+An additional feature within \LaTeX\ is the capability of defining your own tables or boxes environments. These could be very specific or simply a note. This is, yet another, very large package, \verb|\usepackage{tcolorbox}|. Luckily there's plenty of ready-built styles and it is as easy as copy and paste to implement a new table environment.
 
 \begin{note}
-  This a simple note. To modify this in your own style go to the \texttt{main.tex} preamble and add the changes that you'd like.
+  This is a simple note. To modify this in your own style go to the \texttt{main.tex} preamble and add the changes that you'd like.
 \end{note}
