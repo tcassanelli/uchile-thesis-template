@@ -1,0 +1,45 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.wordWrap": "on",
+		"latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.view.pdf.invertMode.enabled": "never",
+    "latex-workshop.hover.preview.newcommand.parseTeXFile.enabled": true,
+    "latex-workshop.view.pdf.zoom": "page-width",
+    "latex-workshop.hover.preview.newcommand.newcommandFile": "macros.tex",
+    "latex-workshop.hover.preview.enabled": false,
+		"cSpell.language": "en",
+    "[python]": {
+      "editor.tabSize": 4
+    },
+    "[latex, *.sty]": {
+        "editor.tabSize": 2
+      },
+    "explorer.autoReveal": false,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "cSpell.words": [
+        "Ampère",
+        "bandpass",
+        "Ciencias",
+        "Euler",
+        "Facultad",
+        "FCFM",
+        "Físicas",
+        "Laplace",
+        "Lorentz",
+        "Matemáticas",
+        "Onnes",
+        "phase",
+        "Poisson",
+        "Universidad",
+        "Zeeman"
+    ],
+    "cSpell.enabled": true,
+	}
+}
