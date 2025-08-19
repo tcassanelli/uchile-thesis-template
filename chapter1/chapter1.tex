@@ -3,7 +3,7 @@
 
 Welcome to your thesis template! To begin with, a brief explanation on how to use the template. The main \TeX\ (pronounced as \textit{tech}) file is located in \texttt{main/main.tex} and will be the main file to compile. Individual chapters also compile independently (located in e.g., \texttt{chapter1/chapter1.tex}) which is useful when compilation times exceed the minute. This independent compilation is a good tool, since you'll be adding a ton of text it is a pain to always wait for the \texttt{main.tex} file to finish compiling.
 
-If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} and \texttt{bibtex}. If you're using VS Code or Atom, or similar text editor they will automatically call these commands under-the-hood in order to compile your manuscript (but first install a \TeX\ distribution). For details on how to set up writing and coding environments check the \texttt{README.md} file in the GitHub repository.
+If you are using Linux or MacOS a few commands come in handy: \texttt{pdflatex} and \texttt{bibtex}. If you're using VS Code or Atom, or similar text editor they will automatically call these commands under-the-hood in order to compile your manuscript (but first install a \TeX\ distribution; \cref{sec:distributions}). For details on how to set up writing and coding environments check the \texttt{README.md} file in the GitHub repository.
 
 \LaTeX\ is not a word processing system, meaning that all information will be first compiled to then be seen in the PDF document. Plain text is lightweight, very fast, and does not need additional resources for computers nowadays to use and store. On the contrary, word processors are bulky and laggy, they tend to be very slow and/or all of a sudden stop working losing all your data. \LaTeX\ gives you the advantage of just focusing on the content and then on the formatting, which is in fact the important thing.
 
@@ -17,9 +17,16 @@ There are multiple \LaTeX\ tutorials out there so I do not need to convince you 
 
 One final word about customization. My intention here is to hand you the full customization of your document, to maximize your writing and add your touch to the document. Using fixed and inflexible templates will obscure your learning path and how to code here, and may not be as useful for a potential academic career where debugging \LaTeX\ code is a must.
 
+\section{Learning \TeX}
+\label{sec:distributions}
+
+The purpose of this template is to get you started wiring your thesis, but a prior knowledge of \LaTeX\ is required. In general, we may be talking in \TeX\ and \LaTeX\ as similar things, but they are not. \TeX\ is the original code developed in the 1980s, but a modern frontend was developed for \TeX\ in the 1990s, the \LaTeX\ that we now-a-day use and love (or hate).
+
+\TeX\ distributions come in all flavours. The most common one is: \TeX\ Live (\url{https://tug.org/texlive/}) under the \gls{tug}. A good amount of resources can be found \url{https://www.tug.org/interest.html}.
+
 \section{Good practices}
 
-\TeX and \LaTeX\ typography are key for a good document and are the main reason why we bother in writing papers in a \LaTeX\ rather than in a rich text environment. Take these guidelines seriously and apply them to your document here and for other projects. Spread the word!
+\TeX\ and \LaTeX\ typography are key for a good document and are the main reason why we bother in writing papers in a \LaTeX\ rather than in a rich text environment. Take these guidelines seriously and apply them to your document here and for other projects. Spread the word!
 
 \begin{enumerate}
 
@@ -29,7 +36,7 @@ One final word about customization. My intention here is to hand you the full cu
   \end{equation}
   Then when referencing the variables in the text you must include them as they were initially defined, viz., $E$ (\verb|$E$|) and not E. In addition, it is a good practice to keep variables different from one another as much as you can, energy $E$ and electric field $E$, which is sometimes unavoidable, but perhaps use a slightly different variable for them. 
 
-  \item {Use of cross-references}, which comes by default, within \TeX. This is very important to not fall into redundant/repeated information, unknown location of things, and simplicity of the text. With this I mean the use of \verb|\label{...}| and \verb|\ref{...}|, in tables, figures, equations, and sections. Further, every time you define a figure, always use it (otherwise what's the point of the figure?). In addition, there are no explicit phrases such as: ``in the fig below'', ``the previous equation'', ``the previous section'', etc. All those should be immediately corrected with a proper cross-reference otherwise may lead to confusion. There are very useful packages that make this process even easier (than the native \TeX), you may want to check \verb|\usepackage{cleveref}|\footnote{\url{https://ctan.org/pkg/cleveref}.}, for example.
+  \item {Use of cross-references}, which comes by default, within \LaTeX. This is very important to not fall into redundant/repeated information, unknown location of things, and simplicity of the text. With this I mean the use of \verb|\label{...}| and \verb|\ref{...}|, in tables, figures, equations, and sections. Further, every time you define a figure, always use it (otherwise what's the point of the figure?). In addition, there are no explicit phrases such as: ``in the fig below'', ``the previous equation'', ``the previous section'', etc. All those should be immediately corrected with a proper cross-reference otherwise may lead to confusion. There are very useful packages that make this process even easier (than the native \LaTeX), you may want to check \verb|\usepackage{cleveref}|\footnote{\url{https://ctan.org/pkg/cleveref}.}, for example.
   
   \item Acronyms may lead to a lot of unorganized text if not used properly. In general, acronyms should be defined once, or ``once in a while'' recall them within the text (e.g., within every chapter in a long thesis). To keep track where you have defined it may lead to many edits. I suggest using \verb|\usepackage{glossaries}|\footnote{\url{https://ctan.org/pkg/glossaries}.}, it will automatically call the acronym given a predefined command, won't repeat the definition (unless you force it to do it), and also prints a full list of the used acronyms, which is super convenient. The learning curve for this may be steep, but worth it. See \cref{sec:glossaries} for additional information.
   
@@ -63,7 +70,7 @@ One final word about customization. My intention here is to hand you the full cu
   \end{equation}
   where $\boldsymbol{\mathcal{B}}$, $\boldsymbol{\mathcal{E}}$, and $\boldsymbol{\mathcal{J}}$ are time- and position-dependent magnetic, electric, and current density fields. The second term on the right in \cref{eq:ampere-maxwell} corresponds to the so-called ``displacement current.'' It is not a current per se, but its name has stuck for historical reasons.
 
-  In this example, please notice that text and the equation environment are packed together. There are no line breaks between them in the plain text above. If there were then \LaTeX\ will introduce a line break, removing the flow of text. Having commas and dots within the equation environment is also desired. Equations are part of the text and they should be treated as such.
+  In this example, please notice that text and the equation environment are packed together (as shown in the plain text). There are no line breaks between them in the plain text above. If there were then \LaTeX\ will introduce a line break, removing the flow of text. Having commas and dots within the equation environment is also desired. Equations are part of the text and they should be treated as such.
   
   \item Displaying units. Along the text there will be many mentions of units, as it should be. Usually they should be expressed with a number and a fixed space, where people tend to do something like: \verb|$4\mathrm{m}$|, or \verb|$4$ m| and it prints $4$ m (notice that the number four is in math mode and not text mode!). An even better practice is to use a package to deal with this sort of things, e.g., \verb|\usepackage{siunitx}|. This package gives you the freedom of using ``quantities'' in text and math mode. For example: \verb|\qty{4}{\meter}| will \qty{4}{\m}. The cool thing about this is that you can write easily
   \begin{verbatim}
@@ -85,6 +92,10 @@ One final word about customization. My intention here is to hand you the full cu
   \item Line breaks in \LaTeX's plain text. In general you do not need to add any sort of space command between paragraphs, figures, or tables. Everything should be simply solved by including a simple plain text line break. Using commands such as \verb|\\| may be even considered harmful since it will mess up the \LaTeX\ compiler optimization. 
   
   \item Errors and warnings are common during \LaTeX\ compilation, but it is strongly advised to minimize them as much as possible. Warnings may indicate issues with references, formatting, or package compatibility (the hardest to solve sometimes), while errors can prevent the document from compiling at all. Maintaining an error- and warning-free document ensures smoother workflow, easier debugging, and higher quality output.
+  
+  \item In this thesis format the use of \verb|\texbf{...}| is not allowed, with the exception of titles, which are already included in this template. If you'd like to emphasize a word use quotation marks, e.g., ``hello world''. In addition, you could use italics, \verb|\textit{...}|, but I'd rather keep italics when you directly express in another language or you quote a phrase from someone else.
+  
+  \item When writing latin words such as: e.g., viz., i.e., always include dots and a comma after using it.
   
   % \item The list of figures (LoF) and list of tables (LoT) is printed with the extended version of the caption. This should not be the case. There should be a one sentence caption (only visible in LoF and LoT), and the extended version, only visible in the main text. To accomplish so use the \verb|\usepackage{caption}| package and in the captions use something like this: \verb|\caption[short caption]{long caption}|.
   
@@ -214,7 +225,7 @@ You should add the \texttt{bibtex} cites in the \texttt{bibfile\_thesis.bib}, th
 
 Some in-line example citations:
 \begin{itemize}
-  \item We have found a fast radio burst to an edge-on galaxy \citep{2024NatAs...8.1429C}.
+  \item We located a fast radio burst to an edge-on galaxy \citep{2024NatAs...8.1429C}.
   \item Authors in \citet{2024NatAs...8.1429C} found a fast radio bursts coming from an edge-on galaxy.
   \item The convolution theorem is one of the most important concepts in radio interferometry \citep[see][chapter~3]{1965ftia.book.....B}.
   \item A new method, developed from first principles, has been developed in very-long baseline interferometry (some authors include \citealt{1965ftia.book.....B}).
