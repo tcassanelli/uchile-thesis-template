@@ -1,4 +1,4 @@
-# README
+# Universidad de Chile FCFM thesis template
 
 This repository hosts the thesis template for Universidad de Chile at the Facultad Ciencias Físicas Matemáticas (FCFM). This is a light version and minimal template that fulfills all needed requirements plus gives the student a set of useful tools to develop the document. The idea of this template is to keep it as customizable as possible, without using or adding custom commands.  
 
