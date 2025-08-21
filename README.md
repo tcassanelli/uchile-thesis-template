@@ -33,6 +33,47 @@ Similarly as distributions, there are multiple text editors that are `\LaTeX\` c
 - Ti _k_ z examples, [TeXample](http://www.texample.net/).
 - `\LaTeX\` [colors](http://latexcolor.com).
 
+# Project structure
+
+The project structure looks something like this:
+
+```bash
+(base) tcassanelli@Tomas-MacBook-M2 uchile-thesis-template % tree
+.
+├── appendix1
+│   └── appendix1.tex
+├── appendix2
+│   └── appendix2.tex
+├── chapter1
+│   └── chapter1.tex
+├── chapter2
+│   └── chapter2.tex
+├── chapter3
+│   └── chapter3.tex
+├── figures
+│   ├── dummy.pdf
+│   └── uchile.pdf
+├── latexdiff-v.sh
+├── main
+│   ├── main-acronyms.tex
+│   ├── main.tex
+├── plot_python
+│   ├── dummy.py
+│   └── thesis_sty.mplstyle
+├── README.md
+├── references
+│   ├── aas_macros.sty
+│   ├── bibfile_thesis.bib
+│   └── bibstyle_aa.bst
+└── uchile-tt.code-workspace
+```
+
+`\LaTeX\` files can be compiled in their own directory or preferable in `main/`. All figures should be included only in the `figures/` directory. 
+
+# `git-latexdiff`
+
+The command line `git-latexdiff` or `latexdiff-vc --git` which should be already installed in the `\LaTeX\` default configuration is a very powerful tool. Particularly useful when you get your first round of comments and then they are incorporated in the text. Once they have been written you can just simply use the already made script `latexdiff-v.sh` calling either two commits or a single commit against the latest changes. A good exercise is to generate commits as you go (with meaningful comments), so you have a well written history of your manuscript.
+
 ## Bugs, issues & feature requests
 
 Tell me what you think and how to improve the template :smiley: !
