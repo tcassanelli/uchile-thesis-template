@@ -1,22 +1,16 @@
 #!/usr/bin/env bash
 # simple script to create a latexdiff file given a specific github commit
-# run this script from the main directory
+# run this script from the main directory ../main
 
 COMMIT1=$1
-COMMIT2=$2
 
-cd main
 mkdir -p versions-diff
+cd main
 
 MAIN="main"
+FILE=$MAIN-diff$COMMIT1
 
-if [ -z "$COMMIT2" ]; the
-    latexdiff-vc --git --graphics-markup=0 --flatten  --run-bibtex --type=BOLD -r $COMMIT1 $MAIN.tex
-    FILE=$MAIN-diff-$COMMIT1
-else
-    latexdiff-vc --git --graphics-markup=0 --flatten  --run-bibtex --type=BOLD -r $COMMIT1 -r $COMMIT2 $MAIN.tex
-    FILE=$MAIN-diff-$COMMIT1-$COMMIT2
-fi
+latexdiff-vc --git --graphics-markup=0 --flatten -r $COMMIT1 $MAIN.tex
 
 makeglossaries $FILE
 pdflatex -interaction=nonstopmode $FILE.tex

@@ -72,7 +72,12 @@ The project structure looks something like this:
 
 # `git-latexdiff`
 
-The command line `git-latexdiff` or `latexdiff-vc --git` which should be already installed in the `\LaTeX\` default configuration is a very powerful tool. Particularly useful when you get your first round of comments and then they are incorporated in the text. Once they have been written you can just simply use the already made script `latexdiff-v.sh` calling either two commits or a single commit against the latest changes. A good exercise is to generate commits as you go (with meaningful comments), so you have a well written history of your manuscript.
+The command line `git-latexdiff` or `latexdiff-vc --git` which should be already installed in the `\LaTeX\` default configuration is a very powerful tool. Particularly useful when you get your first round of comments and then they are incorporated in the text. Once they have been written you can just simply use the already made script `latexdiff-v.sh` calling a single commit against the latest changes. A good exercise is to generate commits as you go (with meaningful comments), so you have a well written history of your manuscript.
+
+Pro tip, save your most important commits (or even better generate a `git tag`) for important milestones to then compare your updated document to. In addition, typing `git log` will give you access to your recent commits. As an example you can directly use the line:
+```bash
+bash latexdiff-v.sh <commit>
+```
 
 ## Bugs, issues & feature requests
 
