@@ -1,0 +1,33 @@
+# latexindent.pl -l quick-start1.yaml quick-start.tex
+
+onlyOneBackUp: 0
+maxNumberOfBackUps: 3
+cycleThroughBackUps: 3
+defaultIndent: "  "
+indentPreamble: 2
+
+
+indentRules:
+    item: ""
+
+modifyLineBreaks:
+    items:
+        ItemStartsOnOwnLine: 2
+    commands:
+        section:
+            BeginStartsOnOwnLine: 2
+            BodyStartsOnOwnLine: 1
+            EndStartsOnOwnLine: 1
+            EndFinishesWithLineBreak: 2
+        subsection:
+            BeginStartsOnOwnLine: 2
+            BodyStartsOnOwnLine: 1
+            EndStartsOnOwnLine: 1
+            EndFinishesWithLineBreak: 2
+    environments:
+        frame:
+            BeginStartsOnOwnLine: 2
+            BodyStartsOnOwnLine: 2
+            EndStartsOnOwnLine: 2
+            EndFinishesWithLineBreak: 2
+
