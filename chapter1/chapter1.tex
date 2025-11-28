@@ -32,36 +32,36 @@ The purpose of this template is to get you started wiring your thesis, but a pri
 
   \item Proper use of math-mode and text-mode. When writing equations and variables within the text you must always keep those variables in the same notation. E.g.,
   \begin{equation}
-      E = mc^2.
+    E = mc^2.
   \end{equation}
-  Then when referencing the variables in the text you must include them as they were initially defined, viz., $E$ (\verb|$E$|) and not E. In addition, it is a good practice to keep variables different from one another as much as you can, energy $E$ and electric field $E$, which is sometimes unavoidable, but perhaps use a slightly different variable for them. 
+  Then when referencing the variables in the text you must include them as they were initially defined, viz., $E$ (\verb|$E$|) and not E. In addition, it is a good practice to keep variables different from one another as much as you can, energy $E$ and electric field $E$, which is sometimes unavoidable, but perhaps use a slightly different variable for them.
 
   \item {Use of cross-references}, which comes by default, within \LaTeX. This is very important to not fall into redundant/repeated information, unknown location of things, and simplicity of the text. With this I mean the use of \verb|\label{...}| and \verb|\ref{...}|, in tables, figures, equations, and sections. Further, every time you define a figure, always use it (otherwise what's the point of the figure?). In addition, there are no explicit phrases such as: ``in the fig below'', ``the previous equation'', ``the previous section'', etc. All those should be immediately corrected with a proper cross-reference otherwise may lead to confusion. There are very useful packages that make this process even easier (than the native \LaTeX), you may want to check \verb|\usepackage{cleveref}|\footnote{\url{https://ctan.org/pkg/cleveref}.}, for example.
-  
+
   \item Acronyms may lead to a lot of unorganized text if not used properly. In general, acronyms should be defined once, or ``once in a while'' recall them within the text (e.g., within every chapter in a long thesis). To keep track where you have defined it may lead to many edits. I suggest using \verb|\usepackage{glossaries}|\footnote{\url{https://ctan.org/pkg/glossaries}.}, it will automatically call the acronym given a predefined command, won't repeat the definition (unless you force it to do it), and also prints a full list of the used acronyms, which is super convenient. The learning curve for this may be steep, but worth it. See \cref{sec:glossaries} for additional information.
-  
+
   \item The proper use of hyphens \verb|-| and it prints -, en-dash \verb|--| and it prints --, and em-dash \verb|---| and it prints ---. All of them are different! Further, there are some cases where hyphens (\verb|-|) are different from minus sign \verb|$-$| and it prints $-$. All of these have a different meaning in scientific writing. For more check: \url{https://sites.duke.edu/scientificwriting/dash-v-hyphen/}.
-  
+
   \item Writing equations. \LaTeX\ has been built to write equations, and make them flow in the text as if they were words. This is the main philosophy when writing. In order to accomplish this, be mindful of the spaces that you insert between paragraphs and equations. E.g.,
-  
+
   \begin{verbnobox}[\small]
-    Ampère's law (including the Maxwell correction) relates the generation 
-    of a magnetic field curl and a time-varying electric field given a 
+    Ampère's law (including the Maxwell correction) relates the generation
+    of a magnetic field curl and a time-varying electric field given a
     source of current,
     \begin{equation}
-      \nabla \times \boldsymbol{\mathcal{B}} = 
-      \mu_0 \boldsymbol{\mathcal{J}} + 
+      \nabla \times \boldsymbol{\mathcal{B}} =
+      \mu_0 \boldsymbol{\mathcal{J}} +
       \mu_0 \epsilon_0 \frac{\partial\boldsymbol{\mathcal{E}}}{\partial t},
     \end{equation}
-    where $\boldsymbol{\mathcal{B}}$, $\boldsymbol{\mathcal{E}}$, 
-    and $\boldsymbol{\mathcal{J}}$ are time- and position-dependent 
-    magnetic, electric, and current density fields. 
-    The second term on the right in 
-    \cref{eq:ampere-maxwell} corresponds to the so-called 
-    ``displacement current.'' It is not a current per se, but its name 
+    where $\boldsymbol{\mathcal{B}}$, $\boldsymbol{\mathcal{E}}$,
+    and $\boldsymbol{\mathcal{J}}$ are time- and position-dependent
+    magnetic, electric, and current density fields.
+    The second term on the right in
+    \cref{eq:ampere-maxwell} corresponds to the so-called
+    ``displacement current.'' It is not a current per se, but its name
     has stuck for historical reasons.
   \end{verbnobox}
-  
+
   This text should compile as:
 
   Ampère's law (including the Maxwell correction) relates the generation of a magnetic field curl and a time-varying electric field given a source of current,
@@ -71,12 +71,12 @@ The purpose of this template is to get you started wiring your thesis, but a pri
   where $\boldsymbol{\mathcal{B}}$, $\boldsymbol{\mathcal{E}}$, and $\boldsymbol{\mathcal{J}}$ are time- and position-dependent magnetic, electric, and current density fields. The second term on the right in \cref{eq:ampere-maxwell} corresponds to the so-called ``displacement current.'' It is not a current per se, but its name has stuck for historical reasons.
 
   In this example, please notice that text and the equation environment are packed together (as shown in the plain text). There are no line breaks between them in the plain text above. If there were then \LaTeX\ will introduce a line break, removing the flow of text. Having commas and dots within the equation environment is also desired. Equations are part of the text and they should be treated as such.
-  
+
   \item Displaying units. Along the text there will be many mentions of units, as it should be. Usually they should be expressed with a number and a fixed space, where people tend to do something like: \verb|$4\mathrm{m}$|, or \verb|$4$ m| and it prints $4$ m (notice that the number four is in math mode and not text mode!). An even better practice is to use a package to deal with this sort of things, e.g., \verb|\usepackage{siunitx}|. This package gives you the freedom of using ``quantities'' in text and math mode. For example: \verb|\qty{4}{\meter}| will \qty{4}{\m}. The cool thing about this is that you can write easily
   \begin{verbatim}
-      \begin{equation}
-          x^2 + y^2 = \qty{4}{\meter\squared}
-      \end{equation}
+    \begin{equation}
+        x^2 + y^2 = \qty{4}{\meter\squared}
+    \end{equation}
   \end{verbatim}
 
   This will then be compiled as:
@@ -85,20 +85,20 @@ The purpose of this template is to get you started wiring your thesis, but a pri
   \end{equation}
   This will highly improve the quality of your science. You can also use this for Kelvins: \verb|\qty{2e4}{\kelvin}| which prints: \qty{2e4}{\kelvin}. Similarly, the package offers number notations, \verb|\num{e4}| which is \num{e4} and other convenient shortcuts to list numbers and ranges for quantities and numbers.
 
-  \item Use a version control system, such as \texttt{git}. Although having it on GitHub is not super necessary it helps to backup the code. Using \texttt{git} enables collaboration (i.e., your supervisor wants to include or give you comments), you can then \texttt{git diff} or even better \texttt{latexdiff} between different commits (or simply \texttt{git-latexdiff}). 
+  \item Use a version control system, such as \texttt{git}. Although having it on GitHub is not super necessary it helps to backup the code. Using \texttt{git} enables collaboration (i.e., your supervisor wants to include or give you comments), you can then \texttt{git diff} or even better \texttt{latexdiff} between different commits (or simply \texttt{git-latexdiff}).
 
   \item As a general rule within your manuscript and setup, do not use spaces when naming files. Spaces will introduce bugs in your workflow, they won't sync nicely with \texttt{git} and will make the organization of things messy. This is a rule of life more than anything else!
-  
-  \item Line breaks in \LaTeX's plain text. In general you do not need to add any sort of space command between paragraphs, figures, or tables. Everything should be simply solved by including a simple plain text line break. Using commands such as \verb|\\| may be even considered harmful since it will mess up the \LaTeX\ compiler optimization. 
-  
+
+  \item Line breaks in \LaTeX's plain text. In general you do not need to add any sort of space command between paragraphs, figures, or tables. Everything should be simply solved by including a simple plain text line break. Using commands such as \verb|\\| may be even considered harmful since it will mess up the \LaTeX\ compiler optimization.
+
   \item Errors and warnings are common during \LaTeX\ compilation, but it is strongly advised to minimize them as much as possible. Warnings may indicate issues with references, formatting, or package compatibility (the hardest to solve sometimes), while errors can prevent the document from compiling at all. Maintaining an error- and warning-free document ensures smoother workflow, easier debugging, and higher quality output.
-  
+
   \item In this thesis format the use of \verb|\texbf{...}| is not allowed, with the exception of titles, which are already included in this template. If you'd like to emphasize a word use quotation marks, e.g., ``hello world''. In addition, you could use italics, \verb|\textit{...}|, but I'd rather keep italics when you directly express in another language or you quote a phrase from someone else.
-  
+
   \item When writing latin words such as: e.g., viz., i.e., always include dots and a comma after using it.
-  
+
   % \item The list of figures (LoF) and list of tables (LoT) is printed with the extended version of the caption. This should not be the case. There should be a one sentence caption (only visible in LoF and LoT), and the extended version, only visible in the main text. To accomplish so use the \verb|\usepackage{caption}| package and in the captions use something like this: \verb|\caption[short caption]{long caption}|.
-  
+
   % \item It would be best to have a header and footer in the document.
 \end{enumerate}
 
@@ -147,9 +147,9 @@ To have a well-organized codebase and manuscript I strongly suggest generating a
 
 Ti\textit{k}Z  (PGF plots) is a powerful tool to create in-line-figures in \LaTeX. Unfortunately the learning curve is \textit{very steep}, but it is definitely worth learning it! There are several online examples that you can browse and edit. Making your own figures will always have an extra value in your work and it is highly appreciated. Sources to learn how to make figures are:
 \begin{itemize}
-    \item The Ti\textit{k}Z package manual, it is long and sometimes hard to grasp but if you want to master Ti\textit{k}Z is the right place to start! \url{https://tikz.dev}
-    \item \url{https://www.ctan.org/pkg/pgf}
-    \item Several cool examples: \url{http://www.texample.net/}.
+  \item The Ti\textit{k}Z package manual, it is long and sometimes hard to grasp but if you want to master Ti\textit{k}Z is the right place to start! \url{https://tikz.dev}
+  \item \url{https://www.ctan.org/pkg/pgf}
+  \item Several cool examples: \url{http://www.texample.net/}.
 \end{itemize}
 With some command lines you can make something like in \cref{fig:my_tikz_fig}. Go check out the code within the \texttt{chapter1/chapter1.tex} directory.
 
@@ -207,11 +207,11 @@ To make nice tables I suggest the package \verb|\usepackage{booktabs}|, as shown
   \begin{tabular}{ccc}
     \toprule
     \textbf{A} & \textbf{B} & \textbf{C} \\ \midrule
-    1 & 2 & 3 \\
-    1 & 2 & 3 \\
-    1 & 2 & 3 \\
-    1 & 2 & 3 \\
-    1 & 2 & 3 \\
+    1          & 2          & 3          \\
+    1          & 2          & 3          \\
+    1          & 2          & 3          \\
+    1          & 2          & 3          \\
+    1          & 2          & 3          \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -242,7 +242,7 @@ To find articles and references it is strongly advised that you use Astrophysics
 
 A full glossary is completely unnecessary for an undergraduate thesis and a graduate one as well, unless in very well-justified cases. Nonetheless, a list of acronyms or variables with units could be of great use particularly when names and variables are scattered all over the place. In particular, acronyms should be defined one time in the text and re-defined again in some key places, but not to fall into defining them over and over. In addition, if an acronym is defined it is recommended to be used then unless it is the case of a very widely known acronym, e.g., \gls{ieee}. As a rule of thumb, use capitalized letters only for institution names, names, or historically written acronyms, otherwise please keep them lowercase, e.g., \acrfull{frb} and \acrfull{bnc}.
 
-The \verb|\usepackage{glossaries}| is a vast and large package containing everything to develop a large index, acronyms and other very nice features that may be overkill for an undergraduate thesis document. Nevertheless, it has a simple smaller version to include acronyms. In the \LaTeX\ world there are several other ways to include acronyms, but I think this is one of the best ones. 
+The \verb|\usepackage{glossaries}| is a vast and large package containing everything to develop a large index, acronyms and other very nice features that may be overkill for an undergraduate thesis document. Nevertheless, it has a simple smaller version to include acronyms. In the \LaTeX\ world there are several other ways to include acronyms, but I think this is one of the best ones.
 
 To call a command you should define it first in the \texttt{main/main-acronyms.tex} file, and within the text you use the command \verb|\gls{...}|, for example:
 

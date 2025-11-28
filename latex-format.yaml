@@ -30,4 +30,3 @@ modifyLineBreaks:
             BodyStartsOnOwnLine: 2
             EndStartsOnOwnLine: 2
             EndFinishesWithLineBreak: 2
-

@@ -53,6 +53,7 @@ The project structure looks something like this:
 ├── figures
 │   ├── dummy.pdf
 │   └── uchile.pdf
+├── latex-format.yaml
 ├── latexdiff-v.sh
 ├── main
 │   ├── main-acronyms.tex
@@ -78,6 +79,15 @@ Pro tip, save your most important commits (or even better generate a `git tag`) 
 ```bash
 bash latexdiff-v.sh <commit>
 ```
+
+# Formatting
+
+You will be writing lots of text in this document, and inspecting the files within the same `.tex` format becomes an exercise. To improve visualization and readability of your code I suggest to use a formatting tool to not waste time re-arranging that yourself or reading unorganized code that may slow you down (your thesis may be more than 100 pages!). Beware that formatting is a world on its own, with multiple variants and not a very well standardize format. I strongly suggest to use `latexindent.pl` since it is a standard out-of-the box tool to quickly formatting your document. I have also included my own personalized commands in the `latex-format.yaml` file, take it or leave it. 
+**Please check how this works first before applying it to your document** since it will overwrite what you have done and you may lose some of your data (another good recommendation is to always `git commit` your changes as you go). Once you know how to use it properly it will be easy to implement. To run the formatting simply use:
+```bash
+latexindent --overwrite -l=../latex-format.yaml chapter1.tex
+```
+This is, of course, entirely optional. For more information visit [latexindent.pl](https://latexindentpl.readthedocs.io/).
 
 ## Bugs, issues & feature requests
 

@@ -39,6 +39,9 @@
 
 *.pdf
 
+# latexindent
+*/*.bak*
+
 # Latexmk
 *.figlist
 *.makefile

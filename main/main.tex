@@ -1,12 +1,10 @@
 \documentclass[
-	12pt,
-	letterpaper,
+  12pt,
+  letterpaper,
   oneside
-  ]{book}
-
+]{book}
 
 \usepackage{geometry}
-
 \geometry{
   left=3cm,
   right=2cm,
@@ -36,13 +34,11 @@
 \renewcommand\appendixname{Annex}
 \renewcommand\appendixpagename{Annexes}
 
-
 % latex-specific for this template
 \usepackage{lipsum}
 \usepackage{verbatim}
 \usepackage{verbatimbox}
 \usepackage{printlen}
-
 
 \usepackage{siunitx}
 \DeclareSIUnit{\parsec}{pc}
@@ -54,7 +50,7 @@
 \sisetup{
   range-phrase=\text{--},
   range-units=single
-  }
+}
 
 % References
 \usepackage{../references/aas_macros}
@@ -68,12 +64,12 @@
   arc=0mm,
   sharp corners,
   fonttitle=\bfseries\small
-  }
+}
 
 \usepackage{hyperref}
 \hypersetup{
   unicode=true,
-  pdftoolbar=false, 
+  pdftoolbar=false,
   pdfmenubar=true,
   pdffitwindow=true,
   pdfstartview={FitH},
@@ -88,7 +84,7 @@
   linkcolor=click_color,
   citecolor=Maroon,
   urlcolor=click_color
-  }
+}
 
 \usepackage[acronym, nonumberlist, symbols]{glossaries}
 \setglossarystyle{tree}
@@ -111,7 +107,7 @@
 
 \newenvironment{preliminary}{
   \pagestyle{plain}\pagenumbering{roman}
-  }{\cleardoublepage\pagenumbering{arabic}}
+}{\cleardoublepage\pagenumbering{arabic}}
 
 \newenvironment{dedication}{
   \if@openright\cleardoublepage\else\clearpage\fi
@@ -119,122 +115,122 @@
   \itshape
   \raggedleft
   \begingroup
-  }{\par\vspace{\stretch{3}}\endgroup\newpage}
+}{\par\vspace{\stretch{3}}\endgroup\newpage}
 
 \newenvironment{acknowledgements}{
   \if@openright\cleardoublepage\else\clearpage\fi
   \chapter*{Acknowledgements}
   \begingroup
-  }{\par\endgroup\newpage}
+}{\par\endgroup\newpage}
 
 \begin{document}
-  \pdfbookmark[section]{Title}{title}
-  \thispagestyle{empty}
-	\def\arraystretch{1.15}
-  
-  \begin{minipage}[t]{0.125\linewidth}
-    \includegraphics[width=1.8cm]{uchile}
-  \end{minipage}
-  \begin{minipage}[b]{0.8\linewidth}
-    \MakeUppercase{Universidad de Chile}
+\pdfbookmark[section]{Title}{title}
+\thispagestyle{empty}
+\def\arraystretch{1.15}
 
-    \MakeUppercase{Facultad de Ciencias Físicas y Matemáticas}
+\begin{minipage}[t]{0.125\linewidth}
+	\includegraphics[width=1.8cm]{uchile}
+\end{minipage}
+\begin{minipage}[b]{0.8\linewidth}
+	\MakeUppercase{Universidad de Chile}
 
-    \MakeUppercase{Departamento Ingeniería Eléctrica}
-	\end{minipage}
+	\MakeUppercase{Facultad de Ciencias Físicas y Matemáticas}
+
+	\MakeUppercase{Departamento Ingeniería Eléctrica}
+\end{minipage}
+
+\begin{center}
+	\vspace{1.5cm}
+
+	\MakeUppercase{\textbf{Thesis Title}}
+
+	\vspace{1.5cm}
+
+	\MakeUppercase{Tesis para optar al grado de magíster en ciencias de la ingeniería, mención área de la ingeniería}
+	\bigbreak\vspace{0.3cm}
+	\MakeUppercase{Memoria para optar al título de ingeniero}
+
+	\vfill
+
+	\begin{tabular}{c}
+		\MakeUppercase{\textbf{Author}}                   \\
+		\vspace{1.0cm}                                    \\
+		PROFESOR GUÍA:                                    \\
+		TOMÁS ALBERTO CASSANELLI ESPEJO                   \\
+		\vspace{0.5cm}                                    \\
+		MIEMBROS DE LA COMISIÓN:                          \\
+		PROFESOR 2                                        \\
+		PROFESOR 3                                        \\
+		\vspace{0.5cm}                                    \\
+		Este trabajo ha sido parcialmente financiado por: \\
+		NOMBRE INSTITUCIÓN                                \\
+		\vspace{0.5cm}                                    \\
+		\MakeUppercase{Santiago de Chile}                 \\
+		\MakeUppercase{year}
+	\end{tabular}
+
+\end{center}
+
+\newpage
+
+\begin{preliminary}
+
+	\pdfbookmark[section]{Abstract}{abstract}
+
+	\setcounter{page}{1}
+
+	\begin{tabular}{l}
+		RESUMEN DE LA MEMORIA PARA OPTAR  \\
+		AL TÍTULO DE MAGÍSTER EN CIENCIAS \\
+		DE LA INGENIERÍA                  \\
+		POR: \MakeUppercase{Autor}        \\
+		FECHA: \MakeUppercase{\today}     \\
+		PROF. GUÍA: TOMÁS CASSANELLI
+	\end{tabular}
 
 	\begin{center}
-    \vspace{1.5cm}
-
-    \MakeUppercase{\textbf{Thesis Title}}
-
-    \vspace{1.5cm}
-
-    \MakeUppercase{Tesis para optar al grado de magíster en ciencias de la ingeniería, mención área de la ingeniería}
-	  \bigbreak\vspace{0.3cm}
-    \MakeUppercase{Memoria para optar al título de ingeniero}
-	
-    \vfill
-
-    \begin{tabular}{c}
-      \MakeUppercase{\textbf{Author}} \\
-      \vspace{1.0cm} \\
-      PROFESOR GUÍA: \\
-      TOMÁS ALBERTO CASSANELLI ESPEJO \\
-      \vspace{0.5cm} \\
-      MIEMBROS DE LA COMISIÓN: \\
-      PROFESOR 2 \\
-      PROFESOR 3 \\
-      \vspace{0.5cm} \\
-      Este trabajo ha sido parcialmente financiado por: \\
-      NOMBRE INSTITUCIÓN \\
-      \vspace{0.5cm} \\
-      \MakeUppercase{Santiago de Chile} \\
-      \MakeUppercase{year}
-    \end{tabular}
-
+		\MakeUppercase{Título de tesis en español}
 	\end{center}
+	\lipsum[1-2]
 
-  \newpage
-  
-  \begin{preliminary}
-  
-  \pdfbookmark[section]{Abstract}{abstract}
-  
-  \setcounter{page}{1}
+	\newpage
 
-  \begin{tabular}{l}
-		RESUMEN DE LA MEMORIA PARA OPTAR \\
+	\begin{tabular}{l}
+		RESUMEN DE LA MEMORIA PARA OPTAR  \\
 		AL TÍTULO DE MAGÍSTER EN CIENCIAS \\
-		DE LA INGENIERÍA \\
-		POR: \MakeUppercase{Autor} \\
-		FECHA: \MakeUppercase{\today} \\
+		DE LA INGENIERÍA                  \\
+		POR: \MakeUppercase{Autor}        \\
+		FECHA: \MakeUppercase{\today}     \\
 		PROF. GUÍA: TOMÁS CASSANELLI
 	\end{tabular}
 
-  \begin{center}
-    \MakeUppercase{Título de tesis en español}
-  \end{center}
-  \lipsum[1-2]
+	\begin{center}
+		\MakeUppercase{Title in English}
+	\end{center}
+	\lipsum[1-2]
 
-  \newpage
+	\newpage
 
-  \begin{tabular}{l}
-		RESUMEN DE LA MEMORIA PARA OPTAR \\
-		AL TÍTULO DE MAGÍSTER EN CIENCIAS \\
-		DE LA INGENIERÍA \\
-		POR: \MakeUppercase{Autor} \\
-		FECHA: \MakeUppercase{\today} \\
-		PROF. GUÍA: TOMÁS CASSANELLI
-	\end{tabular}
+	\pdfbookmark[section]{Dedication}{dedication}
+	\begin{dedication}
+		Dedicated to Google.
+	\end{dedication}
 
-  \begin{center}
-    \MakeUppercase{Title in English}
-  \end{center}
-  \lipsum[1-2]
+	\newpage
 
-  \newpage
+	\pdfbookmark[section]{Acknowledgements}{acknowledgements}
+	\begin{acknowledgements}
+		\lipsum[1-2]
+	\end{acknowledgements}
 
-  \pdfbookmark[section]{Dedication}{dedication}
-  \begin{dedication}
-    Dedicated to Google.
-  \end{dedication}
+	\pdfbookmark[section]{Contents}{contents}
+	\tableofcontents
 
-  \newpage
+	\pdfbookmark[section]{List of Tables}{lot}
+	\listoftables
 
-  \pdfbookmark[section]{Acknowledgements}{acknowledgements}
-  \begin{acknowledgements}
-    \lipsum[1-2]
-  \end{acknowledgements}
-
-  \pdfbookmark[section]{Contents}{contents}
-  \tableofcontents
-
-  \pdfbookmark[section]{List of Tables}{lot}
-  \listoftables
-
-  \pdfbookmark[section]{List of Figures}{lof}
-  \listoffigures
+	\pdfbookmark[section]{List of Figures}{lof}
+	\listoffigures
 
 \end{preliminary}
 
@@ -244,9 +240,9 @@
 
 \phantomsection
 \printglossary[
-  type=acronym,
-  % nogroupskip=true
-  ]
+	type=acronym,
+	% nogroupskip=true
+]
 \addcontentsline{toc}{chapter}{Acronyms}
 
 \phantomsection
@@ -255,10 +251,9 @@
 \addcontentsline{toc}{chapter}{Bibliography}
 
 \appendix
-\appendixpage 
+\appendixpage
 % \addappheadtotoc
 \subfile{../appendix1/appendix1}
 \subfile{../appendix2/appendix2}
-
 
 \end{document}

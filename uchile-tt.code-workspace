@@ -11,9 +11,17 @@
     "latex-workshop.view.pdf.invertMode.enabled": "never",
     "latex-workshop.hover.preview.newcommand.parseTeXFile.enabled": true,
     "latex-workshop.view.pdf.zoom": "page-width",
-    "latex-workshop.hover.preview.newcommand.newcommandFile": "macros.tex",
     "latex-workshop.hover.preview.enabled": false,
-		"cSpell.language": "en",
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.formatting.latexindent.path": "/opt/homebrew/bin/latexindent",
+    // "latex-workshop.formatting.latexindent.args": [
+    //     "--modifylinebreaks",
+    //     "-rv",
+    //     "--local=latex-format.yaml",
+    //     "--overwrite",
+    //     "%DOC%"
+    //     ],
+	"cSpell.language": "en",
     "[python]": {
       "editor.tabSize": 4
     },
@@ -26,6 +34,7 @@
     "cSpell.words": [
         "Ampère",
         "bandpass",
+        "passband",
         "Ciencias",
         "Euler",
         "Facultad",
