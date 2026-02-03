@@ -136,7 +136,7 @@ When including this type of python figures, aspects and other information should
 \begin{figure}[t]
   \centering
   \includegraphics{dummy.pdf}
-  \caption[My first Python figure]{This is a figure made with the script in \texttt{plot\_python/dummy.py}, the figure has the same font format as this caption and text in the document. Notice that $x$-axis and $y$-axis have been written in math mode within the figure labels.}
+  \caption[My first Python figure]{This is a figure made with the script in \texttt{plot\_python/dummy.py}, the figure has the same font format as this caption and text in the document and it has not been scaled using the \texttt{width=} command. Notice that $x$-axis and $y$-axis have been written in math mode within the figure labels.}
   \label{fig:dummy}
 \end{figure}
 
@@ -190,7 +190,7 @@ With some command lines you can make something like in \cref{fig:my_tikz_fig}. G
     \filldraw[black] (0, 0) circle(0.05);
 
   \end{tikzpicture}
-  \caption[My first Ti\textit{k}Z figure]{Nice diagram using Ti\textit{k}Z. Notice that the typesetting of variables is the same as the one used in \LaTeX. Variables $\theta$, $M_1$, $M_2$, have the same font and text style. In this caption you should explain all variables shown in the figure.}
+  \caption[My first Ti\textit{k}Z figure]{Nice diagram using Ti\textit{k}Z. Notice that the typesetting of variables is the same as the one used in \LaTeX. Variables $\theta$, $M_1$, $M_2$, have the same font and text style. In this caption you should explain all variables shown in the figure. Remember that a proper caption should explain all variables shown in the figure, e.g., $M_1, M_2, s_1, s_2, m, r, \theta, r_1, r_2, a,$ and CM should be mentioned!}
   \label{fig:my_tikz_fig}
 \end{figure}
 
